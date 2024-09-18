@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
 const TypewriterEffect = () => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [currentText, setCurrentText] = useState(0); // Controla qual texto está sendo exibido
+  const [displayedText, setDisplayedText] = useState<string>('');
+  const [currentText, setCurrentText] = useState<number>(0); // Controla qual texto está sendo exibido
   const texts = ['Bem vindo ao Almox Helper', 'Soluções práticas para seu almoxarifado'];
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const TypewriterEffect = () => {
     }, 100); // Ajuste a velocidade da digitação aqui (100ms entre cada letra)
 
     return () => clearInterval(intervalId);
-  }, [currentText]); // Re-executa o efeito sempre que currentText mudar
+  }, [currentText]);
 
   return <div className="titleHp">{displayedText}</div>;
 };
