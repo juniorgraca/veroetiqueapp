@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./TableSmalTls.css";
 import { Link } from "react-router-dom";
 import veroLogo from "/verologo1pb.png";

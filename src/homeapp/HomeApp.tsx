@@ -22,7 +22,7 @@ function HomeApp() {
       
       
       </div>
-    <div className="news"> <div className="newsIcon">News</div> <p>Updated - Campo Grande opção large adicionada</p></div>
+    <div className="news"> <div className="newsIcon">News</div> <p className="updatedText"> Updated v1.0.1 - Três Lagoas - MS: Opção pequena adicionada Updated v1.0.0 / Campo Grande - MS: Opção grande adicionada</p></div>
     <section className="homeAppContainer">
 <div className="containerBtnItens">
           <div className="titleHp">
@@ -105,7 +105,7 @@ function HomeApp() {
           <div className="StockTagSubtittle">Pequena</div>
           </Link>
           </button>
-          
+
         <button className="btnStockTag">
           <Link to="/tlssmall" className="linkadd">
           <div className="StockTagTittle">StockTag 5cm</div>

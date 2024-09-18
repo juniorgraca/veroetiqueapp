@@ -105,7 +105,7 @@ li{
 
 .news p {
   white-space: nowrap; /* Impede quebra de linha */
-  animation: scrollText 10s linear infinite; /* Animação rolante */
+  animation: scrollText 25s linear infinite; /* Animação rolante */
  
 }
 
