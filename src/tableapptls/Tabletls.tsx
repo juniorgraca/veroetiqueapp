@@ -3,7 +3,7 @@ import "./Table.css";
 import { Link } from "react-router-dom";
 import veroLogo from "/verologo1pb.png";
 import itemsData3 from '../type/item3.json';
-import TableSmallTls from "../tablesmaltls/TableSmallTls";
+
 
 interface Item {
   codigo: string;
@@ -266,7 +266,7 @@ const Tabletls: React.FC = () => {
             </div>
           </section>
         ))}
-        <TableSmallTls></TableSmallTls>
+
       </div>
     </>
   );

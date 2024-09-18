@@ -99,18 +99,21 @@ function HomeApp() {
         <div className="cityTittle">Três Lagoas</div>
         <div className="containetBtn">
           
+          <button className="btnStockTag">
+          <Link to="/tlssmal1" className="linkadd">
+          <div className="StockTagTittle">StockTag 3 Cm</div>
+          <div className="StockTagSubtittle">Pequena</div>
+          </Link>
+          </button>
+          
         <button className="btnStockTag">
           <Link to="/tlssmall" className="linkadd">
-          <div className="StockTagTittle">StockTag 3cm</div>
-          <div className="StockTagSubtittle">Pequena</div>
+          <div className="StockTagTittle">StockTag 5cm</div>
+          <div className="StockTagSubtittle">Media</div>
           </Link>
           </button>
 
           
-          <button className="btnStockTagDisable">
-          <div className="StockTagTittle">Manutenção</div>
-          <div className="StockTagSubtittle">Desabilitado</div>
-          </button>
 
     
              
