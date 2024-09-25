@@ -12,6 +12,11 @@ interface Item {
 }
 
 const CgLarge: React.FC = () => {
+  useEffect(() => {
+
+    document.title = "Etiqueta - Estoque Assistente";
+  }, []);
+
   const [dados, setDados] = useState<Item[]>([]);
   const [codigo, setCodigo] = useState<string>('');
   const [name, setName] = useState<string>('');

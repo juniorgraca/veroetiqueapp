@@ -1,11 +1,15 @@
 
-import React from 'react';
 import "./Home.css";
+import { useEffect } from "react";
 import veroLogo from "/verologo1.png";
 import { useFilial } from '../FilialContext'; // Importando o contexto
 
 export default function Home() {
   const { filial, setFilial } = useFilial();
+  useEffect(() => {
+
+    document.title = "Estoque Assistente - Página inicial";
+  }, []);
 
   const handleFilialChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setFilial(event.target.value);

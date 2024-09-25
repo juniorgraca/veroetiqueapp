@@ -1,27 +1,34 @@
 
 import "./Homeapp.css";
 import { Link } from "react-router-dom";
-import Logojr from "/logojr.png";
-import TypewriterEffect from "./TypewriterEffect";
 
+import TypewriterEffect from "./TypewriterEffect";
+import { useEffect } from "react";
+import Navbar from "../navbar/Navbar";
 
 function HomeApp() {
+
+  useEffect(() => {
+
+    document.title = "Estoque Assistente - Página inicial";
+  }, []);
   return (
 
      <section className="secHome">
- 
-    <div className="navBartop">
+      <Navbar></Navbar>
+    {/* <div className="navBartop">
       <div className="logoFundo">
     <img className="logoJr" src={Logojr} width="38" alt="LogoJr" />
     </div>
       <ul>
         <li>Home</li>
       <li>Contact</li>
+      <Link className="liBar" to="/about">Gestão de Almoxarifado </Link>
       
       </ul>
       
       
-      </div>
+      </div> */}
     <div className="news"> <div className="newsIcon">News</div> <p className="updatedText"> Updated v1.0.1 - Três Lagoas - MS: Opção pequena adicionada Updated v1.0.0 / Campo Grande - MS: Opção grande adicionada</p></div>
     <section className="homeAppContainer">
 <div className="containerBtnItens">
