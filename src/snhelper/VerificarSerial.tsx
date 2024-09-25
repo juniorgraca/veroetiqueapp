@@ -1,10 +1,18 @@
-import { useState, KeyboardEvent, ChangeEvent } from 'react';
+import { useState, KeyboardEvent, ChangeEvent, useRef, useEffect } from 'react';
 import styles from './Verificar.module.css';
 import Navbar from '../navbar/Navbar';
 
 function SnHelper() {
   const [inputValue, setInputValue] = useState<string>('');
   const [message, setMessage] = useState<JSX.Element | string>('');
+  const inputRef = useRef<HTMLInputElement | null>(null); // Criar referência
+
+  useEffect(() => {
+    // Foca no input ao montar o componente
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -79,6 +87,7 @@ function SnHelper() {
       <h1 className={styles.title}>Verificador de Itens</h1>
       <div className={styles.bodyBtn}>
         <input
+          ref={inputRef} // Referência do input
           className={styles.inputClass}
           type="text"
           value={inputValue}
