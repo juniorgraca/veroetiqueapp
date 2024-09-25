@@ -13,7 +13,9 @@
   margin: 5px 10px;
   width: 50%;
 }
-
+.pItem{
+  width: 100%;
+}
 p{
   width: 370px;
   margin: 10px 3px;

@@ -42,16 +42,15 @@ display: flexbox;
 
 }
 
+.pItem{
+  width: 100%;
+}
 
 .pretext{
   border-bottom: 1px solid black;
 }
 
-p{
-  width: 100%;
-  margin: 10px 3px;
- 
-}
+
 .textp{
   text-transform: uppercase;
   font-size: 1.1rem;

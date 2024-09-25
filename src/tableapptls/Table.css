@@ -49,11 +49,6 @@ display: flexbox;
   border-bottom: 1px solid black;
 }
 
-p{
-  width: 370px;
-  margin: 10px 3px;
- 
-}
 .textp{
   text-transform: uppercase;
   font-size: 1.1rem;
@@ -102,6 +97,10 @@ h1{
   border-radius: 10px;
   background-color: #f7ecef;
   
+}
+
+.pItem{
+  width: 100%;
 }
 
 b{

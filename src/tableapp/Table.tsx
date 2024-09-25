@@ -119,14 +119,14 @@ const Table: React.FC = () => {
           <div className="info-section">
             <div className="area-dados">
               <Link to="/" className="link">Voltar ao início</Link>
-              <p><b>Código do item</b></p>
+              <p className="pItem"><b>Código do item</b></p>
               <input
                 type='text'
                 placeholder='Digite o código do produto'
                 value={codigo}
                 onChange={handleChangeCodigo}
               />
-              <p><b>Nome do item</b></p>
+              <p className="pItem"><b>Nome do item</b></p>
               <input
                 type='text'
                 placeholder='Digite o nome do produto'
@@ -151,7 +151,7 @@ const Table: React.FC = () => {
                   ))}
                 </div>
               )}
-              <p><b>Armazém Manual</b></p>
+              <p className="pItem"><b>Armazém Manual</b></p>
               <input
                 type='text'
                 placeholder='Digite um armazém manualmente'
@@ -159,7 +159,7 @@ const Table: React.FC = () => {
                 onChange={handleChangeArmazemManual}
               />
               <div className='areaInput'>
-                <p><b>
+                <p className="pItem"><b>
                   Mapa de almox</b>
                   <span className='infotext'>(se não houver deixe em branco)</span>
                   <input
@@ -177,7 +177,7 @@ const Table: React.FC = () => {
                   onChange={handleChangeMap}
                 />
               </div>
-              <p><b className="textInform">Quantidade de itens</b></p>
+              <p className="pItem"><b className="textInform">Quantidade de itens</b></p>
               <input
                 type='number'
                 placeholder='Número de itens'
