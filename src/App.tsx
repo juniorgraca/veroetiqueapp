@@ -8,7 +8,9 @@ import Table from "./tableapp/Table";
 import CgLarge from "./cglarge/CgLarge";
 import TableSmallTls from "./tablesmaltls/TableSmallTls";
 import About from "./about/About";
-import BarLeitor from "./barleitor/BarLeitor";
+import VerificaSerial from "./snhelper/VerificarSerial";
+import NotFound from "./notfound/NotFound";
+
 
 
 export default function App() {
@@ -23,11 +25,8 @@ export default function App() {
           <Route path="/cgbig" element={<CgLarge />} />
           <Route path= "/tlssmal1" element = {<TableSmallTls/>} />
           <Route path = "/about" element ={<About/>} />
-          <Route path = "/code" element ={<BarLeitor/>} />
-       
-
-
-
+          <Route path = "/vsn" element ={<VerificaSerial/>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>   
       </Router>
    

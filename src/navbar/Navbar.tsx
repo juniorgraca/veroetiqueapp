@@ -1,23 +1,39 @@
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logojr from "/logojr.png";
 
 function Navbar() {
-  return (
-      <>
-      <div className="navBartop">
-      <div className="logoFundo">
-    <img className="logoJr" src={Logojr} width="38" alt="LogoJr" />
-    </div>
-      <ul>
-      <Link className="liBar" to="/">Home </Link>
-      <Link className="liBar" to="/about">Gestão de Almoxarifado </Link>
-      </ul>
-      
+  const location = useLocation(); // Obtém a localização atual da rota
 
+  return (
+    <>
+      <div className="navBartop">
+        <div className="logoFundo">
+          <img className="logoJr" src={Logojr} width="38" alt="LogoJr" />
+        </div>
+        <ul>
+          <Link
+            className={`liBar ${location.pathname === "/" ? "active" : ""}`}
+            to="/"
+          >
+            Home
+          </Link>
+          {/* <Link
+            className={`liBar ${location.pathname === "/about" ? "active" : ""}`}
+            to="/about"
+          >
+            Gestão de Almoxarifado
+          </Link> */}
+          <Link
+            className={`liBar ${location.pathname === "/vsn" ? "active" : ""}`}
+            to="/vsn"
+          >
+            Verificar Equipamento
+          </Link>
+        </ul>
       </div>
-      </>
-  )
+    </>
+  );
 }
 
-export default Navbar
+export default Navbar;

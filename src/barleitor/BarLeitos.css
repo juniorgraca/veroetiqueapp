@@ -1,8 +1,0 @@
-.canvas-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 500px;
-  height: 500px;
-  pointer-events: none; /* Permite que eventos de mouse passem para o vídeo */
-}

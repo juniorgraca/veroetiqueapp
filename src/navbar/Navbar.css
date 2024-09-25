@@ -1,0 +1,9 @@
+.liBar {
+  color: gray; /* Estilo para as abas inativas */
+  text-decoration: none;
+}
+
+.liBar.active {
+  color: rgb(255, 255, 255); /* Cor da aba ativa */
+  font-weight: 500; /* Você pode adicionar mais estilos aqui */
+}
