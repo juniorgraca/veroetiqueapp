@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Quagga from 'quagga'; // Certifique-se de que o Quagga foi instalado corretamente
+import Quagga from 'quagga';
 
 const BarLeitor: React.FC = () => {
   const [codigo, setCodigo] = useState<string>('');
@@ -11,27 +11,27 @@ const BarLeitor: React.FC = () => {
         inputStream: {
           name: "Live",
           type: "LiveStream",
-          target: videoRef.current, // Referência para o vídeo
+          target: videoRef.current,
           constraints: {
-            width: 640, // Define a resolução
+            width: 640,
             height: 480,
-            facingMode: "environment", // Usa a câmera traseira
+            facingMode: "environment",
           }
         },
         locator: {
-          patchSize: "medium", // Tamanho do patch de detecção (small, medium, large)
-          halfSample: true // Reduz a resolução para performance
+          patchSize: "medium",
+          halfSample: true
         },
-        numOfWorkers: navigator.hardwareConcurrency || 4, // Número de threads para processamento
+        numOfWorkers: navigator.hardwareConcurrency || 4,
         decoder: {
           readers: [
-            "code_128_reader", // Adicione outros tipos de leitores se necessário
+            "code_128_reader",
             "ean_reader",
             "ean_8_reader",
             "code_39_reader"
           ]
         },
-        locate: true // Habilita a busca por códigos de barras na tela
+        locate: true
       }, (err: any) => {
         if (err) {
           console.error("Erro ao inicializar o Quagga:", err);
@@ -40,7 +40,7 @@ const BarLeitor: React.FC = () => {
         Quagga.start();
       });
 
-      Quagga.onProcessed((result: any) => {
+      Quagga.onProcessed((result: QuaggaResult) => {
         const drawingCanvas = Quagga.canvas.dom.overlay;
         if (result) {
           const ctx = drawingCanvas.getContext('2d');
@@ -48,15 +48,15 @@ const BarLeitor: React.FC = () => {
             ctx.clearRect(0, 0, drawingCanvas.width, drawingCanvas.height);
             result.boxes
               .filter((box: any) => box !== result.box)
-              .forEach((box: any) => Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, ctx, { color: "green", lineWidth: 2 }));
+              .forEach((box: any) => Quagga.ImageDebug.drawPath(box, ctx, { color: "green", lineWidth: 2 }));
             if (result.box) {
-              Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, ctx, { color: "red", lineWidth: 2 });
+              Quagga.ImageDebug.drawPath(result.box, ctx, { color: "red", lineWidth: 2 });
             }
           }
         }
       });
 
-      Quagga.onDetected((data: any) => {
+      Quagga.onDetected((data: QuaggaResult) => {
         if (data && data.codeResult && data.codeResult.code) {
           setCodigo(data.codeResult.code);
         }
