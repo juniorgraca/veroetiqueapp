@@ -1,79 +1,61 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Quagga, { QuaggaResult } from 'quagga'; // Certifique-se de importar QuaggaResult
-
+import { BrowserMultiFormatReader, NotFoundException, Result } from '@zxing/library';
+import "./BarLeitos.css";
 const BarLeitor: React.FC = () => {
   const [codigo, setCodigo] = useState<string>('');
-  const videoRef = useRef<HTMLDivElement | null>(null);
+  const [error, setError] = useState<string>('');
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const overlayRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
+    const codeReader = new BrowserMultiFormatReader();
+
     if (videoRef.current) {
-      Quagga.init({
-        inputStream: {
-          name: "Live",
-          type: "LiveStream",
-          target: videoRef.current,
-          constraints: {
-            width: 640,
-            height: 480,
-            facingMode: "environment",
-          }
-        },
-        locator: {
-          patchSize: "medium",
-          halfSample: true
-        },
-        decoder: {
-          readers: [
-            "code_128_reader",
-            "ean_reader",
-            "ean_8_reader",
-            "code_39_reader"
-          ]
-        },
-        locate: true
-      }, (err: any) => {
-        if (err) {
-          console.error("Erro ao inicializar o Quagga:", err);
-          return;
-        }
-        Quagga.start();
-      });
-
-      Quagga.onProcessed((result: QuaggaResult) => {
-        const drawingCanvas = Quagga.canvas.dom.overlay;
+      codeReader.decodeFromVideoDevice(null, videoRef.current, (result: Result | null, err: any) => {
         if (result) {
-          const ctx = drawingCanvas.getContext('2d');
-          if (ctx && result.boxes) {
-            ctx.clearRect(0, 0, drawingCanvas.width, drawingCanvas.height);
-            result.boxes
-              .filter((box: any) => box !== result.box)
-              .forEach((box: any) => Quagga.ImageDebug.drawPath(box, ctx, { color: "green", lineWidth: 2 }));
-            if (result.box) {
-              Quagga.ImageDebug.drawPath(result.box, ctx, { color: "red", lineWidth: 2 });
-            }
-          }
+          setCodigo(result.getText());
+          setError('');
+          drawOverlay(result);
+        } else if (err && !(err instanceof NotFoundException)) {
+          console.error(err);
+          setError('Erro ao ler o código. Tente novamente.');
         }
       });
-
-      Quagga.onDetected((data: QuaggaResult) => {
-        if (data && data.codeResult && data.codeResult.code) {
-          setCodigo(data.codeResult.code);
-        }
-      });
-
-      return () => {
-        Quagga.stop();
-      };
     }
+
+    return () => {
+      codeReader.reset();
+    };
   }, []);
 
+  const drawOverlay = (result: Result) => {
+    const overlay = overlayRef.current;
+    if (overlay) {
+      const ctx = overlay.getContext('2d');
+      const width = overlay.width;
+      const height = overlay.height;
+      ctx.clearRect(0, 0, width, height); // Limpa o canvas
+
+      // Desenhar retângulos ao redor dos pontos detectados
+      const points = result.getResultPoints();
+      ctx.strokeStyle = 'red';
+      ctx.lineWidth = 2;
+
+      points.forEach((point: { getX: () => number; getY: () => number }) => {
+        ctx.strokeRect(point.getX() - 10, point.getY() - 10, 20, 20); // Desenhar um retângulo em torno do ponto
+      });
+    }
+  };
+
   return (
-    <div>
-      <h1>BarLeitor - Leitor de Código de Barras</h1>
-      <div ref={videoRef} style={{ width: "500px", height: "500px" }} />
+    <div style={{ position: 'relative', width: '500px', height: '500px' }}>
+      <h1>BarLeitor - Leitor de Código de Barras e QR Code</h1>
+      <video ref={videoRef} style={{ width: '100%', height: '100%' }} />
+      <canvas ref={overlayRef} className="canvas-overlay" width={500} height={500} />
       <p>Código escaneado: {codigo}</p>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
-}
+};
 
 export default BarLeitor;
