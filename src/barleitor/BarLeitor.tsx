@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Quagga from 'quagga';
+import Quagga, { QuaggaResult } from 'quagga'; // Certifique-se de importar QuaggaResult
 
 const BarLeitor: React.FC = () => {
   const [codigo, setCodigo] = useState<string>('');
@@ -22,7 +22,6 @@ const BarLeitor: React.FC = () => {
           patchSize: "medium",
           halfSample: true
         },
-        numOfWorkers: navigator.hardwareConcurrency || 4,
         decoder: {
           readers: [
             "code_128_reader",
