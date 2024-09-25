@@ -114,8 +114,8 @@ const Table: React.FC = () => {
   return (
     <>
       <div>
-      <div className="bodyItem">
         <div className="no-print">
+      <div className="bodyItem">
           <div className="info-section">
             <div className="area-dados">
               <Link to="/" className="link">Voltar ao início</Link>
