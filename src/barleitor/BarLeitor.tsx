@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { BrowserMultiFormatReader, NotFoundException, Result } from '@zxing/library';
-import "./BarLeitos.css";
+
 const BarLeitor: React.FC = () => {
   const [codigo, setCodigo] = useState<string>('');
   const [error, setError] = useState<string>('');
@@ -34,16 +34,19 @@ const BarLeitor: React.FC = () => {
       const ctx = overlay.getContext('2d');
       const width = overlay.width;
       const height = overlay.height;
-      ctx.clearRect(0, 0, width, height); // Limpa o canvas
 
-      // Desenhar retângulos ao redor dos pontos detectados
-      const points = result.getResultPoints();
-      ctx.strokeStyle = 'red';
-      ctx.lineWidth = 2;
+      if (ctx) { // Verifica se ctx não é null
+        ctx.clearRect(0, 0, width, height); // Limpa o canvas
 
-      points.forEach((point: { getX: () => number; getY: () => number }) => {
-        ctx.strokeRect(point.getX() - 10, point.getY() - 10, 20, 20); // Desenhar um retângulo em torno do ponto
-      });
+        // Desenhar retângulos ao redor dos pontos detectados
+        const points = result.getResultPoints();
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 2;
+
+        points.forEach((point: { getX: () => number; getY: () => number }) => {
+          ctx.strokeRect(point.getX() - 10, point.getY() - 10, 20, 20); // Desenhar um retângulo em torno do ponto
+        });
+      }
     }
   };
 
