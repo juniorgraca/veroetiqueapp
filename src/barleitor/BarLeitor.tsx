@@ -1,18 +1,24 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { BrowserMultiFormatReader, NotFoundException, Result } from '@zxing/library';
 
+// Componente principal do leitor de código de barras
 const BarLeitor: React.FC = () => {
+  // Estados para armazenar o código lido e erros
   const [codigo, setCodigo] = useState<string>('');
   const [error, setError] = useState<string>('');
+
+  // Referências para o vídeo e o canvas do overlay
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const overlayRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     const codeReader = new BrowserMultiFormatReader();
 
+    // Inicializa a leitura do vídeo
     if (videoRef.current) {
       codeReader.decodeFromVideoDevice(null, videoRef.current, (result: Result | null, err: any) => {
         if (result) {
+          // Atualiza o estado com o código lido
           setCodigo(result.getText());
           setError('');
           drawOverlay(result);
@@ -23,11 +29,13 @@ const BarLeitor: React.FC = () => {
       });
     }
 
+    // Limpa o leitor quando o componente é desmontado
     return () => {
       codeReader.reset();
     };
   }, []);
 
+  // Função para desenhar um overlay com retângulos ao redor dos pontos detectados
   const drawOverlay = (result: Result) => {
     const overlay = overlayRef.current;
     if (overlay) {
@@ -35,7 +43,7 @@ const BarLeitor: React.FC = () => {
       const width = overlay.width;
       const height = overlay.height;
 
-      if (ctx) { // Verifica se ctx não é null
+      if (ctx) {
         ctx.clearRect(0, 0, width, height); // Limpa o canvas
 
         // Desenhar retângulos ao redor dos pontos detectados
