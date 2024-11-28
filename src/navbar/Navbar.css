@@ -1,9 +1,15 @@
 .liBar {
   color: gray; /* Estilo para as abas inativas */
   text-decoration: none;
+  padding: 30px 30px;
 }
 
 .liBar.active {
   color: rgb(255, 255, 255); /* Cor da aba ativa */
   font-weight: 500; /* Você pode adicionar mais estilos aqui */
+}
+.navBartop{
+  width: 100%;
+  max-width: 100%;
+  height: 60px;
 }

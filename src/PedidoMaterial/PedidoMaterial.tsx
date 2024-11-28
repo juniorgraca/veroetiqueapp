@@ -1,3 +1,4 @@
+import Navbar from '../navbar/Navbar';
 import itemSearch from '../type/itemSearch.json';
 import style from './PedidoMaterial.module.css';
 import { useState } from 'react';
@@ -116,7 +117,11 @@ function PedidoMaterial() {
   };
 
   return (
+    
     <>
+    
+    <div className={style.secHome}>
+    <Navbar/>
       <div className={style.naoCopiar}> 
         <p className={style.pTitle}>Projeto</p>
         <input type="text" placeholder="DIGITE O NOME PROJETO EX: TROCA DE POSTE" value={projeto} onChange={(e) => setProjeto(e.target.value)} />
@@ -225,6 +230,7 @@ function PedidoMaterial() {
 
       <div>
         <button onClick={copyRenderedContent}>Copiar conteúdo renderizado</button>
+      </div>
       </div>
     </>
   );

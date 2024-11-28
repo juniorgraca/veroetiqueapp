@@ -26,7 +26,7 @@ function Navbar() {
           </Link> */}
           <Link
             className={`liBar ${location.pathname === "/pedido" ? "active" : ""}`}
-            to="/vsn"
+            to="/pedido"
           >
             Pedido de material
           </Link>
