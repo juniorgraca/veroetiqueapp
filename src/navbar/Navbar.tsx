@@ -25,10 +25,10 @@ function Navbar() {
             Gestão de Almoxarifado
           </Link> */}
           <Link
-            className={`liBar ${location.pathname === "/vsn" ? "active" : ""}`}
+            className={`liBar ${location.pathname === "/pedido" ? "active" : ""}`}
             to="/vsn"
           >
-            Verificar Equipamento
+            Pedido de material
           </Link>
         </ul>
       </div>
