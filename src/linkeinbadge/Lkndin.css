@@ -1,0 +1,19 @@
+.hidden {
+  display: none;
+}
+
+.badge-base {
+  overflow: hidden; /* Garante que não haverá barras de rolagem */
+  width: 250px; /* Defina a largura desejada */
+  height: auto; /* Ajusta a altura automaticamente com base no conteúdo */
+  max-height: 600px; /* Define uma altura máxima para evitar que o badge se estenda demais */
+ /* Opcional: Adiciona uma borda para visualizar melhor o contêiner */
+  box-sizing: border-box; /* Garante que o padding e a borda estejam incluídos na largura e altura */
+}
+
+/* Opcional: Adicione uma regra para garantir que o link preencha o contêiner */
+.badge-base__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

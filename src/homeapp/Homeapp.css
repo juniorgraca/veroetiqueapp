@@ -1,0 +1,252 @@
+.navBartop{
+  background-color: rgb(31, 30, 30);
+  width: 1440px;
+  display: flex;
+  border-radius:10px;
+  height: 60px;
+  margin: 30px auto;
+  
+  align-items: center;
+}
+
+.homeAppContainer{
+  width: 100%;
+  justify-content: center;
+}
+
+
+ul{
+  list-style: none;
+  display: flex;
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 400;
+}
+li:hover{
+  color: #9fa2f9;
+}
+li{
+  margin-left: 50px;
+  font-size: 1.1rem;
+
+  list-style: none;
+}
+
+.liBar{
+  margin-left: 50px;
+  font-size: 1.1rem;
+  list-style: none;
+  text-decoration: none;
+  color: #ffffff;
+  
+}
+.liBar:hover{
+  color: #9fa2f9;
+}
+.logoFundo{
+  background-color: #ffffff;
+  margin: 0px 10px;
+  
+  border-radius: 10px;
+}
+
+.logoJr{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  padding: 3px 4px;
+
+}
+
+.titleHp{
+  margin-top: 60px;
+  font-size: 3.9rem;
+  text-align: center;
+  font-weight: bold;
+  color: #171941;
+  height: 70px;
+}
+.subtitleHp{
+  margin-top: 25px;
+  font-size: 1.4rem;
+  text-align: justify;
+  text-align: center;
+  color: #171941;
+  font-weight: 600;
+}
+.newsIcon{ 
+  font-weight: bold;
+  margin: 0 px;
+  color: #ffffff;
+  background-color: #6D88EA;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.news {
+  background-color: black;
+  display: flex;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  overflow: hidden; /* Para esconder o texto que sai da área */
+  position: relative;
+}
+
+
+.news::before {
+  background-color: #000000;
+  color: white;
+  padding: 40px 10px;
+  border-radius: 25px;
+  height: 200px;
+  margin-left: -20px;
+  overflow: hidden; /* Para esconder o texto que sai da área */
+  
+  content: '';
+  z-index: 2;
+}
+
+.news p {
+  white-space: nowrap; /* Impede quebra de linha */
+  animation: scrollText 25s linear infinite; /* Animação rolante */
+ 
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%); /* Começa fora da direita */
+  }
+  100% {
+    transform: translateX(-100%); /* Rola até sair pela esquerda */
+  }
+}
+
+
+.secHome{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("/fundo.png");
+
+
+  height: 100vh;
+ 
+}
+
+.btncontactArea{
+  margin-top: 15px;
+  justify-content: center;
+  display: flex;
+}
+.linkendin{
+  display: inline-block;
+            background-color: #0077b5; /* Cor do LinkedIn */
+ 
+            padding: 10px 35px; /* Espaçamento interno */
+            font-size: 16px; /* Tamanho da fonte */
+            font-weight: bold; /* Peso da fonte */
+            text-align: center; /* Alinhamento do texto */
+            text-decoration: none; /* Remove sublinhado */
+            border-radius: 35px; /* Cantos arredondados */
+            border: none; /* Remove borda */
+            transition: background-color 0.3s ease; /* Transição suave de cor */
+            border: 2px solid rgba(255, 255, 255, 0);
+}
+.btnContact{
+  margin-left: 30px;
+  background-color: #fff;
+  color: #ffffff; /* Cor do texto */
+  padding: 10px 35px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  font-weight: bold; /* Peso da fonte */
+  text-align: center; /* Alinhamento do texto */
+  text-decoration: none; /* Remove sublinhado */
+  border-radius: 35px; /* Cantos arredondados */
+  border: none; /* Remove borda */
+  transition: background-color 0.3s ease; /* Transição suave de cor */
+  border: 2px solid rgba(255, 255, 255, 0);
+}
+.btnContact:hover{
+  cursor: pointer;
+  border: 2px solid #0077b5;
+}
+
+.linkendin:hover{
+  cursor: pointer;
+  background-color:  #ffffff;
+  border: 2px solid #0077b5;
+}
+
+
+a {
+  text-decoration: none;
+  color: #171941;
+}
+
+.contentCity{
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+}
+
+.cityTittle{
+  text-align: center;
+}
+
+.btnStockTag{
+  margin: 10px 10px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 30px;
+  animation: ease-in 0.4ms;
+  border: 1px solid #b7b9ba12;
+}
+
+.btnStockTag:hover{
+  margin: 10px 10px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 30px;
+  background-color: #1719412f;
+  border: 1px solid #9fa2f9;
+
+}
+
+.btnStockTagDisable{
+  border-radius: 5px;
+  border: none;
+  margin: 10px 10px;
+  padding: 10px 30px;
+  background-color: #e7e7e772;
+  
+}
+.containetBtn{
+  display:grid;
+ 
+  margin:0px 60px;
+}
+.contentAndradina{
+  height: 300px;
+  width: 100%;
+}
+
+.cityTittle{
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.StockTagTittle{
+  font-weight: 700;
+}
+
+
