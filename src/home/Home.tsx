@@ -3,6 +3,7 @@ import "./Home.css";
 import { useEffect } from "react";
 import veroLogo from "/verologo1.png";
 import { useFilial } from '../FilialContext'; // Importando o contexto
+import Adsense1 from "../googlead/Adsense1";
 
 export default function Home() {
   const { filial, setFilial } = useFilial();
@@ -33,6 +34,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Adsense1></Adsense1>
       </section>  
     </>
   );

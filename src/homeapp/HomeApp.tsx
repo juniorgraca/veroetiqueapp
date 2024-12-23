@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import TypewriterEffect from "./TypewriterEffect";
 import { useEffect } from "react";
 import Navbar from "../navbar/Navbar";
+import Adsense1 from "../googlead/Adsense1";
+
 
 function HomeApp() {
 
@@ -16,25 +18,13 @@ function HomeApp() {
 
      <section className="secHome">
       <Navbar></Navbar>
-    {/* <div className="navBartop">
-      <div className="logoFundo">
-    <img className="logoJr" src={Logojr} width="38" alt="LogoJr" />
-    </div>
-      <ul>
-        <li>Home</li>
-      <li>Contact</li>
-      <Link className="liBar" to="/about">Gestão de Almoxarifado </Link>
-      
-      </ul>
-      
-      
-      </div> */}
+ 
     <div className="news"> <div className="newsIcon">News</div> <p className="updatedText"> Updated v1.0.1 - Três Lagoas - MS: Opção pequena adicionada Updated v1.0.0 / Campo Grande - MS: Opção grande adicionada</p></div>
     <section className="homeAppContainer">
 <div className="containerBtnItens">
           <div className="titleHp">
             <TypewriterEffect></TypewriterEffect>
-           
+          
           </div>
           <div className="subtitleHp">
           Este é um projeto pessoal sem fins lucrativos, criado com o objetivo de auxiliar e otimizar as rotinas do almoxarifado. <br />
@@ -122,19 +112,26 @@ function HomeApp() {
 
           
 
-    
+        
              
         <button className="btnStockTagDisable">
           <div className="StockTagTittle">Manutenção</div>
           <div className="StockTagSubtittle">Desabilitado</div>
           </button>
         </div>
+        <Adsense1/>
         <div className="linkdinBody">
         </div>
-        </div>
+        </div>  
+        
 </div>
-      </div>
 
+      </div>
+      
+      <div>
+   
+      </div>
+   
       </section>
 
     </section>
