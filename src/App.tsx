@@ -10,6 +10,7 @@ import About from "./about/About";
 import VerificaSerial from "./snhelper/VerificarSerial";
 import NotFound from "./notfound/NotFound";
 import PedidoMaterial from "./PedidoMaterial/PedidoMaterial";
+import { Analytics } from "@vercel/analytics/react"
 
 
 
@@ -18,6 +19,7 @@ export default function App() {
 
       <Router>
         <Routes>
+           <Analytics/>
           <Route path="/" element={<HomeApp />} />
           <Route path="/tlssmall" element={<Tabletls />} />
           <Route path="/cgsmall" element={<Tablecg />} />
