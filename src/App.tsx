@@ -18,8 +18,9 @@ export default function App() {
   return (
 
       <Router>
+         <Analytics/>
         <Routes>
-           <Analytics/>
+          
           <Route path="/" element={<HomeApp />} />
           <Route path="/tlssmall" element={<Tabletls />} />
           <Route path="/cgsmall" element={<Tablecg />} />

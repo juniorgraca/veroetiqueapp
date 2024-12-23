@@ -14,7 +14,7 @@
     "@vercel/analytics": "^1.4.1",
     "@zxing/library": "^0.21.3",
     "js-cookie": "^3.0.5",
-    "quagga": "^0.12.1",
+    "quagga": "^0.6.16",
     "react": "^18.3.1",
     "react-barcode-reader": "^0.0.2",
     "react-dom": "^18.3.1",
