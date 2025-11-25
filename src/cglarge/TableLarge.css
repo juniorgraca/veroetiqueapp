@@ -1,0 +1,68 @@
+.single-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.item-containerlarge {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  page-break-inside: avoid;
+  border: 1px solid black;
+}
+
+
+.textarealarge {
+  flex: 1;
+  border-right: 1px solid black;
+
+}
+
+.infotext{
+
+  width: 100%;
+  display: inline;
+}
+.logoarealarge {
+  display: flex;
+  align-items: center;
+
+}
+
+.logoVerolarge {
+  margin: 10px 10px;
+  width: 280px;
+}
+
+.texdescrlarge{
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  margin-left: 0px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.texdescrlargebottom{
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-left: 0px;
+  height: 100%;
+  width: 100%;
+}
+.textClass{
+  margin-left: 5px;
+  font-size: 1.7rem;
+  width: 100%;
+}
+
+.texdescrlargedescr{
+  height: 80px;
+  display: flex;
+  width: 98%;
+  align-items: center;
+  word-break: break-all;
+}

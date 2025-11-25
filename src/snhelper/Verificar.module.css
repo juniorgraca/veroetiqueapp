@@ -1,0 +1,61 @@
+.boddyVerify{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("/fundo.png");
+  height:100vh ;
+}
+
+
+.title{
+
+  font-size: 2rem;
+
+}
+
+.inputClass::placeholder {
+  color: #f1f1f1; /* Muda a cor do texto do placeholder para vermelho */
+  opacity: 1; /* Torna o texto opaco */
+}
+.inputClass{
+  background-color: rgba(0, 0, 0, 0.247);
+  font-size: 1.3rem;
+  color: rgb(253, 253, 253);
+  text-align: center;
+  border-radius: 35px; 
+}
+.btn{
+  margin-left: 30px;
+  display: inline-block;
+  background-color: #0077b5; /* Cor do LinkedIn */
+  padding: 10px 35px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  font-weight: bold; /* Peso da fonte */
+  text-align: center; /* Alinhamento do texto */
+  text-decoration: none; /* Remove sublinhado */
+  border-radius: 35px; /* Cantos arredondados */
+  border: none; /* Remove borda */
+  transition: background-color 0.3s ease; /* Transição suave de cor */
+  border: 2px solid rgba(255, 255, 255, 0);
+}
+
+.btn:hover{
+  cursor: pointer;
+  background-color:  #ffffff;
+  border: 2px solid #0077b5;
+}
+.bodyBtn{
+
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+}
+
+.textMsg{
+
+  font-size: 1.3rem;
+  margin-top: 45px;
+}
+.itemHeader{
+  background-color: red;
+}
