@@ -83,27 +83,32 @@ function HomeApp() {
         <div className="containetBtn">
           
           <button className="btnStockTag">
+          <Link to="/tam1" className="linkadd">
+          <div className="StockTagTittle">StockTag Bin </div>
+          <div className="StockTagSubtittle">n° 05</div>
+          </Link>
+          </button>
+          <button className="btnStockTag">
+          <Link to="/tam2" className="linkadd">
+          <div className="StockTagTittle">StockTag Bin </div>
+          <div className="StockTagSubtittle">n° 07</div>
+          </Link>
+          </button>
+          <button className="btnStockTag">
           <Link to="/tlssmal1" className="linkadd">
-          <div className="StockTagTittle">StockTag 3 Cm</div>
+          <div className="StockTagTittle">StockTag Prateleira</div>
           <div className="StockTagSubtittle">Média</div>
           </Link>
           </button>
 
         <button className="btnStockTag">
           <Link to="/tlssmall" className="linkadd">
-          <div className="StockTagTittle">StockTag 5cm</div>
+          <div className="StockTagTittle">StockTag Porta Paletes</div>
           <div className="StockTagSubtittle">Grande</div>
           </Link>
           </button>
 
-          
 
-    
-             
-        <button className="btnStockTagDisable">
-          <div className="StockTagTittle">Manutenção</div>
-          <div className="StockTagSubtittle">Desabilitado</div>
-          </button>
         </div>
         <div className="linkdinBody">
         </div>
