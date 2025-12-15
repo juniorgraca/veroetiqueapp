@@ -102,7 +102,16 @@ h1{
 .pItem{
   width: 100%;
 }
+.texdescr2{
+  font-size: 1.3em;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  width: 100%;
 
+}
 b{
 
   width: 100%;
@@ -121,23 +130,30 @@ section{
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
+  padding: 11px;
 }
-.sect1{
+.textp2{
+  font-size: 1.3rem;
+  font-weight: bold;
+
+}
+.sect1Nov{
   
   border-radius: 1px;
   border: 1px solid black;
   display: flex;
   margin: 5px 10px;
-  width: 50%;
+  width: 48%;
 }
 
 
-.sect2{
+.sect2Nov{
   border-radius: 1px;
-  width: 50%;
+  width: 48%;
   border: 1px solid black;
   display: flex;
   margin: 5px 10px;
+
 }
 
 

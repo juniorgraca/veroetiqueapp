@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Table.css";
 import { Link } from "react-router-dom";
-import veroLogo from "/verologo1pb.png";
+
 import itemsData3 from '../type/item3.json';
 
 
@@ -193,76 +193,72 @@ const Tabletls: React.FC = () => {
 
         {Array.from({ length: Math.max(dadosColuna1.length, dadosColuna2.length) }).map((_, rowIndex) => (
           <section key={rowIndex}>
-            <div className="sect2">
+            <div className="sect2Nov">
               <div className="textarea">
                 <div className="pretext">
-                  <p className="textp">
+                  <p className="textp2">
                     CÓD.: {dadosColuna1[rowIndex]?.codigo || ''}
                   </p>
                 </div>
                 <div className="pretext">
-                  <p className="texdescr">
+                  <p className="texdescr2">
                     {dadosColuna1[rowIndex]?.nome || ''}
                   </p>
                 </div>
                 {isChecked ? (
                   <>
                     <div className="pretext">
-                      <p className="textp">
+                      <p className="textp2">
                         ARMAZÉM: {dadosColuna1[rowIndex]?.armazem || ''}
                       </p>
                     </div>
-                    <p className="textp">
+                    <p className="textp2">
                       {dadosColuna1[rowIndex]?.map || ''}
                     </p>
                   </>
                 ) : (
                   <div>
-                    <p className="textp">
+                    <p className="textp2">
                       ARMAZÉM: {dadosColuna1[rowIndex]?.armazem || ''}
                     </p>
                   </div>
                 )}
               </div>
-              <div className="logoarea">
-                <img className="logoVero" src={veroLogo} width="120px" alt="Logo" />
-              </div>
+         
             </div>
 
-            <div className="sect1">
+            <div className="sect1Nov">
               <div className="textarea">
                 <div className="pretext">
-                  <p className="textp">
+                  <p className="textp2">
                     CÓD.: {dadosColuna2[rowIndex]?.codigo || ''}
                   </p>
                 </div>
                 <div className="pretext">
-                  <p className="texdescr">
+                  <p className="texdescr2">
                     {dadosColuna2[rowIndex]?.nome || ''}
                   </p>
                 </div>
                 {isChecked ? (
                   <>
                     <div className="pretext">
-                      <p className="textp">
+                      <p className="textp2">
                         ARMAZÉM: {dadosColuna2[rowIndex]?.armazem || ''}
                       </p>
                     </div>
-                    <p className="textp">
+                    <p className="textp2">
                       {dadosColuna2[rowIndex]?.map || ''}
                     </p>
                   </>
                 ) : (
                   <div>
-                    <p className="textp">
+                    <p className="textp2">
                       ARMAZÉM: {dadosColuna2[rowIndex]?.armazem || ''}
                     </p>
                   </div>
                 )}
               </div>
-              <div className="logoarea">
-                <img className="logoVero" src={veroLogo} width="120px" alt="Logo" />
-              </div>
+
             </div>
           </section>
         ))}
